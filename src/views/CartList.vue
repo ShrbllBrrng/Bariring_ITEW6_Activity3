@@ -1,15 +1,15 @@
 <template>
   <div class="cart">
-    <table style="width:100%; table-layout: fixed;" align="center">
+    <table border="0" cellspacing="0" style="width:45%; table-layout: fixed;" align="center">
       <th>Product Name</th>
       <th>Price</th>
       <th>Unit Price</th>
       <th>Quantity</th>
       <tr v-for="(item, index) in cart" :key="index">
-        <td>{{ item.name }}</td>
+        <td align="left">{{ item.name }}</td>
         <td align="right">₱{{ computedItemPrice(item) }}</td>
         <td align="right"> ₱{{ item.unitPrice }}</td>
-        <td align="right"><button @click="deductQuantity(index)">-</button> {{ item.quantity }}  <button @click="addQuantity(index)">+</button></td>
+        <td align="center"><button class="cart-button" @click="deductQuantity(index)">-</button> {{ item.quantity }}  <button class="cart-button" @click="addQuantity(index)">+</button></td>
       </tr>
     </table>
       <div class="checkout">
@@ -56,7 +56,26 @@ export default {
 </script>
 
 <style>
-table, th, td {
-  background-color: bisque;
-}
+  th{
+    background-color: burlywood;
+  }
+
+  tr {
+    background-color: bisque;
+    border-bottom: 1px solid brown;
+  }
+
+  .cart-button {
+    background-color: burlywood;
+    border: none;
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .cart-button:hover {
+    color: white;
+    background-color: brown;
+    padding: 0%;
+  }
 </style>

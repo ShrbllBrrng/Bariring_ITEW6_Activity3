@@ -1,13 +1,12 @@
 <template>
     <div class="products">
-      <table style="width:100%; table-layout: fixed;" align="center">
+      <table border="0" cellspacing="0" style="width:45%; table-layout: fixed;" align="center">
         <th>Product Name</th>
         <th>Price</th>
-        <th>Button</th>
         <tr v-for="item in products" :key="item.id">
-          <td>{{ item.name }}</td>
+          <td align="left">{{ item.name }}</td>
           <td align="right">₱{{ item.price }}</td>
-          <td><button @click="addToCart(item)">Add to Cart</button></td>
+          <td class="button-add"><button @click="addToCart(item)">Add to Cart</button></td>
         </tr>
       </table>
     </div>
@@ -56,8 +55,42 @@
   </script>
   
   <style>
-  table, th, td {
-    background-color: bisque;
-  }
+    th{
+      background-color: burlywood;
+      border: none;
+      padding: 1%;
+    }
+
+    tr {
+      background-color: bisque;
+    }
+
+    td {
+      padding: 1%;
+      border: 1px solid white;
+      border-top: none;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+    }
+
+    .button-add {
+      background-color: white;
+      border: none;
+    }
+
+    button {
+      border: none;
+      border-radius: 50px;
+      font-size: medium;
+      background-color: white;
+    }
+
+    button:hover {
+      color: black;
+      background-color: bisque;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   </style>
   
